@@ -1,0 +1,81 @@
+﻿c<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<link href="main.css" rel="stylesheet" />
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <link href="js/javascript.css" rel="stylesheet" />
+    <title></title>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="main_content">
+
+            <div id="header">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OrderSystemConnectionString %>" SelectCommand="SELECT [fb_id], [fb_name], [money], [user_group] FROM [users] WHERE ([fb_id] = @fb_id)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="0" Name="fb_id" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+
+                <div id="head_pic">
+                    <div id="title">
+                        <asp:Label ID="l_fb_name" runat="server" Text=""></asp:Label>你好，歡迎使用 「有儲值功能的訂餐系統」  你的儲值金額還剩餘
+                 <asp:Label ID="l_money" runat="server" Font-Bold="True" ForeColor="Red" CssClass="l_money" Font-Size="XX-Large"></asp:Label>&nbsp;元
+                    </div>
+                    <img src="pic/head.jpg" width="100%" />
+                </div>
+
+                
+                <script language="JavaScript">
+                    
+                    
+                    var tips = [
+                    "請客系統新上線!!! 請大家多多請客!!!~~ ",
+                    "訂餐系統自2015年11月13日 開始第一筆訂餐",
+                    "訂餐系統是Simon做的，他很偉大！",
+                    "訂餐系統是Simon做的，他很偉大！",
+                    "訂餐系統是Simon做的，他很偉大！",
+                    "你也可以找晶婷儲值",
+                    "女子團體中國娃娃裡面其實沒有中國人"
+                    ];
+
+                    sel = Math.floor( tips.length * Math.random());
+                  
+
+                    document.write('<div style ="color : red">你知道嗎? ' +tips[sel] +'</div>');
+       
+                </script>
+
+           
+
+
+            </div>
+            <div id="menu">
+                <ul runat="server">
+                    <li><a href="start_order.aspx">開始訂餐</a></li>
+                    <li><a href="consume_log.aspx">我的消費紀錄</a></li>
+                    <li id="add_money" runat="server"><a href="add_money.aspx">儲值</a></li>
+                    <li id="system" runat="server"><a href="menu_edit.aspx">餐點管理</a></li>
+                    
+                    <!-- <li id="stat" runat="server"><a href="stat.aspx">數據統計</a></li> -->
+
+                </ul>
+            </div>
+            <div>
+                <asp:ContentPlaceHolder ID="head" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="footer">Power by Simon | Email: simonwei@igs.com.tw</div>
+
+        </div>
+    </form>
+</body>
+</html>

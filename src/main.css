@@ -1,0 +1,77 @@
+﻿body {
+  background-image : url(pic/shutiao-001.jpg);
+}
+#header {
+
+
+}
+#title{
+     padding:10px;
+     
+}
+
+#header_pic {
+ 
+  width:100%;
+}
+
+#main_content{
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:30px;
+  min-height:1000px;
+  background-color:#FCFFED;
+}
+
+#footer{
+  height:30px;
+  width:79%;
+  position:fixed;
+  bottom:0px;
+  background-color:burlywood;
+}
+
+#menu{
+  text-align:right;
+}
+
+#menu ul{
+  list-style:none;
+}
+
+#menu li{
+  display:inline-block;  
+  margin-right:20px;
+  
+}
+
+#menu li:hover{
+  font-style: italic;
+}
+
+
+#content{
+  width:95%;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+#content .row{
+
+}
+
+#content .alterrow{
+  background-color:palegoldenrod;
+}
+
+#content .row:hover{
+   background-color :brown;
+  color: white;
+}
+
+#content .alterrow:hover{
+   background-color :brown;
+  color: white;
+}
+
