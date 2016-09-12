@@ -1,77 +1,78 @@
 ﻿body {
-  background-image : url(pic/shutiao-001.jpg);
+    background-image: url(pic/shutiao-001.jpg);
 }
+
 #header {
-
-
 }
-#title{
-     padding:10px;
-     
+
+#title {
+    padding: 10px;
 }
 
 #header_pic {
- 
-  width:100%;
+    width: 100%;
 }
 
-#main_content{
-  width:80%;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:30px;
-  min-height:1000px;
-  background-color:#FCFFED;
+#main_content {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    min-height: 1000px;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
-#footer{
-  height:30px;
-  width:79%;
-  position:fixed;
-  bottom:0px;
-  background-color:burlywood;
+#footer {
+    height: 30px;
+    width: 79%;
+    position: fixed;
+    bottom: 0px;
+    background-color: burlywood;
 }
 
-#menu{
-  text-align:right;
+#menu {
+    text-align: right;
 }
 
-#menu ul{
-  list-style:none;
+    #menu ul {
+        list-style: none;
+    }
+
+    #menu li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+        #menu li:hover {
+            font-style: italic;
+        }
+
+
+#content {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#menu li{
-  display:inline-block;  
-  margin-right:20px;
-  
-}
+    #content .row {
+    height: 40px;
+background-color: rgb(249, 216, 238);
+    }
 
-#menu li:hover{
-  font-style: italic;
-}
+    #content .alterrow {
+       height: 40px;
+    }
 
+    #content .row:hover {
+        background-color: chocolate;
+        color: white;
+    }
 
-#content{
-  width:95%;
-  margin-left : auto;
-  margin-right : auto;
-}
+    #content .alterrow:hover {
+        background-color:chocolate;
+        color: white;
+    }
 
-#content .row{
-
-}
-
-#content .alterrow{
-  background-color:palegoldenrod;
-}
-
-#content .row:hover{
-   background-color :brown;
-  color: white;
-}
-
-#content .alterrow:hover{
-   background-color :brown;
-  color: white;
-}
-
+    #content .headerCSS {
+       background-color: rgb(239, 183, 220);
+    }

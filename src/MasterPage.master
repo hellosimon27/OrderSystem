@@ -1,4 +1,4 @@
-﻿c<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <link href="main.css" rel="stylesheet" />
 <!DOCTYPE html>
@@ -13,7 +13,6 @@
 <body>
     <form id="form1" runat="server">
         <div id="main_content">
-
             <div id="header">
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OrderSystemConnectionString %>" SelectCommand="SELECT [fb_id], [fb_name], [money], [user_group] FROM [users] WHERE ([fb_id] = @fb_id)">
                     <SelectParameters>
@@ -37,10 +36,9 @@
                     "請客系統新上線!!! 請大家多多請客!!!~~ ",
                     "訂餐系統自2015年11月13日 開始第一筆訂餐",
                     "訂餐系統是Simon做的，他很偉大！",
-                    "訂餐系統是Simon做的，他很偉大！",
-                    "訂餐系統是Simon做的，他很偉大！",
                     "你也可以找晶婷儲值",
-                    "女子團體中國娃娃裡面其實沒有中國人"
+                    "女子團體中國娃娃裡面其實沒有中國人",
+                    "訂餐系統現在上Github了，歡迎有志之士加入開發行列"
                     ];
 
                     sel = Math.floor( tips.length * Math.random());
@@ -65,10 +63,12 @@
 
                 </ul>
             </div>
-            <div>
-                <asp:ContentPlaceHolder ID="head" runat="server">
+
+           <div>
+                <asp:ContentPlaceHolder ID="head" runat="server" Visible ="false">
                 </asp:ContentPlaceHolder>
             </div>
+           
             <div id="content">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>

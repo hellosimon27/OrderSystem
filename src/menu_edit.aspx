@@ -3,7 +3,7 @@
 <asp:content id="Content1" contentplaceholderid="head" runat="Server">
 </asp:content>
 <asp:content id="Content2" contentplaceholderid="ContentPlaceHolder1" runat="Server">
- <script src="js/JavaScript.js"></script>
+    <script src="js/JavaScript.js"></script>
     <script>
 
         function check_money(index)
@@ -44,8 +44,8 @@
     </script>
  
     <p>
-        編輯菜單<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Width="90%" DataKeyNames="SN" ShowFooter="True" OnRowCommand="GridView1_RowCommand" OnRowDataBound="GridView1_RowDataBound">
-        <AlternatingRowStyle BackColor="PaleGoldenrod" />
+        編輯菜單<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="2" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Width="90%" DataKeyNames="SN" ShowFooter="True" OnRowCommand="GridView1_RowCommand" OnRowDataBound="GridView1_RowDataBound">
+        <AlternatingRowStyle CssClass="alterrow" />
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             <asp:BoundField DataField="sn" HeaderText="SN" InsertVisible="False" ReadOnly="True" SortExpression="sn">
@@ -119,8 +119,9 @@
            
         </Columns>
         <FooterStyle BackColor="Tan" />
-        <HeaderStyle BackColor="Tan" Font-Bold="True" />
+        <HeaderStyle Font-Bold="True" CssClass="headerCSS" />
         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+            <RowStyle BorderStyle="None" CssClass="row" />
         <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
         <SortedAscendingCellStyle BackColor="#FAFAE7" />
         <SortedAscendingHeaderStyle BackColor="#DAC09E" />

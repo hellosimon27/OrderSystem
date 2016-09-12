@@ -3,17 +3,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="SqlDataSource4" ForeColor="Black" GridLines="None" OnRowDataBound="GridView4_RowDataBound" Width="80%">
-        <AlternatingRowStyle BackColor="PaleGoldenrod" />
+    <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" CellPadding="2" DataSourceID="SqlDataSource4" ForeColor="Black" GridLines="None" OnRowDataBound="GridView4_RowDataBound" Width="80%">
+        <AlternatingRowStyle CssClass="alterrow" />
         <Columns>
-            <asp:BoundField DataField="fb_name" HeaderText="fb_name" SortExpression="fb_name" />
-            <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-            <asp:BoundField DataField="tel" HeaderText="tel" SortExpression="tel" />
-            <asp:BoundField DataField="valid" HeaderText="valid" SortExpression="valid" />
+            <asp:BoundField DataField="fb_name" HeaderText="發起人" SortExpression="fb_name" />
+            <asp:BoundField DataField="name" HeaderText="店家名稱" SortExpression="name" />
+            <asp:BoundField DataField="tel" HeaderText="電話" SortExpression="tel" />
         </Columns>
         <FooterStyle BackColor="Tan" />
-        <HeaderStyle BackColor="Tan" Font-Bold="True" />
+        <HeaderStyle Font-Bold="True" HorizontalAlign="Left" CssClass="headerCSS" />
         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+        <RowStyle CssClass="row" />
         <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
         <SortedAscendingCellStyle BackColor="#FAFAE7" />
         <SortedAscendingHeaderStyle BackColor="#DAC09E" />
@@ -29,8 +29,8 @@ left join dbo.menu c on a.rest_id = c.sn where id=@id">
     <br>
 
 
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Width="80%">
-        <AlternatingRowStyle BackColor="PaleGoldenrod" />
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="2" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Width="80%">
+        <AlternatingRowStyle CssClass="alterrow" />
         <Columns>
             <asp:BoundField DataField="name" HeaderText="名稱" SortExpression="name">
                 <HeaderStyle HorizontalAlign="Left" />
@@ -49,8 +49,9 @@ left join dbo.menu c on a.rest_id = c.sn where id=@id">
             </asp:BoundField>
         </Columns>
         <FooterStyle BackColor="Tan" />
-        <HeaderStyle BackColor="Tan" Font-Bold="True" />
+        <HeaderStyle Font-Bold="True" CssClass="headerCSS" />
         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+        <RowStyle CssClass="row" />
         <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
         <SortedAscendingCellStyle BackColor="#FAFAE7" />
         <SortedAscendingHeaderStyle BackColor="#DAC09E" />
@@ -73,8 +74,8 @@ left join dbo.menu c on a.rest_id = c.sn where id=@id">
     </asp:SqlDataSource>
     <br />
     總計:<br />
-    <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="SqlDataSource3" ForeColor="Black" GridLines="None" Width="80%">
-        <AlternatingRowStyle BackColor="PaleGoldenrod" />
+    <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" CellPadding="2" DataSourceID="SqlDataSource3" ForeColor="Black" GridLines="None" Width="80%">
+        <AlternatingRowStyle CssClass="alterrow" />
         <Columns>
             <asp:BoundField DataField="amount" HeaderText="總數" ReadOnly="True" SortExpression="amount">
                 <HeaderStyle HorizontalAlign="Left" />
@@ -84,8 +85,9 @@ left join dbo.menu c on a.rest_id = c.sn where id=@id">
             </asp:BoundField>
         </Columns>
         <FooterStyle BackColor="Tan" />
-        <HeaderStyle BackColor="Tan" Font-Bold="True" />
+        <HeaderStyle Font-Bold="True" CssClass="headerCSS" />
         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+        <RowStyle CssClass="row" />
         <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
         <SortedAscendingCellStyle BackColor="#FAFAE7" />
         <SortedAscendingHeaderStyle BackColor="#DAC09E" />
@@ -108,8 +110,8 @@ left join dbo.menu c on a.rest_id = c.sn where id=@id">
     <br />
     <br />
     明細:<br />
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="SqlDataSource2" ForeColor="Black" GridLines="None" Width="80%" DataKeyNames="id" style="margin-right: 1px" OnRowDataBound="GridView2_RowDataBound" OnRowEditing="GridView2_RowEditing" OnRowUpdating="GridView2_RowUpdating">
-        <AlternatingRowStyle BackColor="PaleGoldenrod" />
+    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="2" DataSourceID="SqlDataSource2" ForeColor="Black" GridLines="None" Width="80%" DataKeyNames="id" style="margin-right: 1px" OnRowDataBound="GridView2_RowDataBound" OnRowEditing="GridView2_RowEditing" OnRowUpdating="GridView2_RowUpdating">
+        <AlternatingRowStyle CssClass="alterrow" />
         <Columns>
             <asp:BoundField DataField="fb_name" HeaderText="姓名" SortExpression="fb_name" ReadOnly="True">
                 <HeaderStyle HorizontalAlign="Left" />
@@ -167,8 +169,9 @@ left join dbo.menu c on a.rest_id = c.sn where id=@id">
             <asp:BoundField DataField="fb_id" HeaderText="fb_id" SortExpression="fb_id" Visible="False" ReadOnly="True" />
         </Columns>
         <FooterStyle BackColor="Tan" />
-        <HeaderStyle BackColor="Tan" Font-Bold="True" />
+        <HeaderStyle Font-Bold="True" CssClass="headerCSS" />
         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+        <RowStyle CssClass="row" />
         <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
         <SortedAscendingCellStyle BackColor="#FAFAE7" />
         <SortedAscendingHeaderStyle BackColor="#DAC09E" />

@@ -82,7 +82,7 @@
           
         };
     </script>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Width="100%" OnRowDataBound="GridView1_RowDataBound">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="2" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Width="100%" OnRowDataBound="GridView1_RowDataBound" BorderStyle="None">
         <AlternatingRowStyle CssClass="alterrow" />
         <Columns>
             <asp:TemplateField HeaderText="品項" SortExpression="name">
@@ -150,7 +150,7 @@
         </Columns>
         <EditRowStyle CssClass="row" />
         <FooterStyle BackColor="Tan" />
-        <HeaderStyle BackColor="Tan" Font-Bold="True" />
+        <HeaderStyle Font-Bold="True" CssClass="headerCSS" />
         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
         <RowStyle CssClass="row" />
         <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />

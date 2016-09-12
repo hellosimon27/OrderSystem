@@ -64,14 +64,10 @@ public partial class order_result : System.Web.UI.Page
     
     if (e.Row.RowType == DataControlRowType.DataRow)
     {
-      if (int.Parse(DataBinder.Eval(e.Row.DataItem, "valid").ToString()) >= 1 && Session["user_group"].ToString() != "1")
-      {/*
-        e.Row.Cells[6].Visible = false;
-        e.Row.Cells[7].Visible = false;
-        */
+      if (int.Parse(DataBinder.Eval(e.Row.DataItem, "valid").ToString()) >= 1)
+      {
         GridView2.Columns[6].Visible = false;
-        GridView2.Columns[7].Visible = false;
-        
+        GridView2.Columns[7].Visible = false;       
         
       }
 

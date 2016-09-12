@@ -5,8 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" OnDataBound="GridView1_DataBound" Width="80%" OnLoad="GridView1_Load" ShowFooter="True">
-        <AlternatingRowStyle BackColor="PaleGoldenrod" />
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="2" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" OnDataBound="GridView1_DataBound" Width="80%" OnLoad="GridView1_Load" ShowFooter="True">
+        <AlternatingRowStyle CssClass="alterrow" />
         <Columns>
             <asp:TemplateField ShowHeader="False">
                 <EditItemTemplate>
@@ -99,8 +99,9 @@
             </asp:TemplateField>
         </Columns>
         <FooterStyle BackColor="Tan" />
-        <HeaderStyle BackColor="Tan" Font-Bold="True" />
+        <HeaderStyle Font-Bold="True" CssClass="headerCSS" />
         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+        <RowStyle CssClass="row" />
         <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
         <SortedAscendingCellStyle BackColor="#FAFAE7" />
         <SortedAscendingHeaderStyle BackColor="#DAC09E" />

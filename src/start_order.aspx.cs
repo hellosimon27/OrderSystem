@@ -20,23 +20,20 @@ public partial class start_order : System.Web.UI.Page
 	{
 		if (e.Row.RowType == DataControlRowType.DataRow)
 		{
-			if (int.Parse(e.Row.Cells[5].Text) > 0)
-			{
-				e.Row.Style.Add(HtmlTextWriterStyle.BackgroundColor, "yellow");
-			}
+		
 
 			if (DataBinder.Eval(e.Row.DataItem, "fb_id").ToString() != Session["fb_id"].ToString() && Session["user_group"].ToString() != "1")
 			{
 				e.Row.Cells[0].Text = "--";
 			}
 
-			if (DataBinder.Eval(e.Row.DataItem, "valid").ToString() == "0" )
+			if (DataBinder.Eval(e.Row.DataItem, "valid").ToString() == "0")
 			{
 				string decodedText = HttpUtility.HtmlDecode("<a href =\"order_det.aspx?order_id=" + e.Row.Cells[1].Text + "\">>> 點餐 <<</a>");
-				e.Row.Cells[9].Text = decodedText;
+				e.Row.Cells[5].Text = decodedText;
 			}
 			else
-				e.Row.Cells[9].Text = e.Row.Cells[6].Text + "已收單";
+			 e.Row.Cells[5].Text ="已收單";
 		}
 	}
 
@@ -84,6 +81,28 @@ public partial class start_order : System.Web.UI.Page
 			sql.UpdateCommand = query;
 			sql.Update();
 		}
+		else if (e.CommandName == "abandon")
+		{
+			ConnectionStringSettings mySetting = ConfigurationManager.ConnectionStrings["OrderSystemConnectionString"];
+			if (mySetting == null || string.IsNullOrEmpty(mySetting.ConnectionString))
+				throw new Exception("Fatal error: missing connecting string in web.config file");
+			var conString = mySetting.ConnectionString;
+
+			string query = "exec abandon_order @id = " + e.CommandArgument;
+
+			SqlDataSource sql = new SqlDataSource();
+			sql.ConnectionString = conString;
+			sql.DeleteCommand = query;
+			sql.Delete();
+		}
+
 		GridView1.DataBind();
+	}
+
+
+
+	protected void LinButton6_Click(object sender, EventArgs e)
+	{
+
 	}
 }
